@@ -15,15 +15,29 @@
       </div>
       <div
         class="main__btn"
+        v-if="nextTournamentTime > 1000 * 60 * 60 * 2 && !info.isRegistered"
+        @click="register"
+      >Register</div>
+      <div
+        class="main__btn"
         @click="$router.push(`/events/${info.event.id}`)"
+        v-else
       >
-        <template v-if="nextTournamentTime > 1000 * 60 * 60 * 2">
-          <template v-if="!info.isRegistered">Register</template>
-          <template v-else>Registered</template>
-        </template>
+        <template v-if="nextTournamentTime > 1000 * 60 * 60 * 2 && info.isRegistered">Registered</template>
         <template v-else>Open tournament</template>
       </div>
     </main>
+
+    <PopupsChooseTeam
+      :teams="info?.event?.teams"
+    />
+
+    <PopupsEventEmail />
+    <PopupsEventFee
+      :amount="info?.event?.participationFee"
+      :id="info?.event?.id"
+      @reregister="register"
+    />
   </div>
 </template>
 
@@ -32,7 +46,7 @@ let nextTournamentTime = ref(null),
   interval = null,
   info = ref(false)
 
-let { $API } = useNuxtApp();
+let { $API, $togglePopup } = useNuxtApp();
 
 const formatTime = computed(() => {
   if (!nextTournamentTime) return "";
@@ -44,6 +58,25 @@ const formatTime = computed(() => {
 
   return `${days} : ${hours} : ${minutes} : ${seconds}`
 })
+
+const register = async () => {
+  if (info?.value?.event?.teams && info?.value?.event?.teams.length > 1) {
+    return $togglePopup('ChooseTeamPopup')
+  }
+
+  let resp = await $API().Events.register({
+    accessToken: localStorage.getItem('accessToken'),
+    id: info.value.event.id
+  });
+  let body = await resp.json();
+  console.log(body);
+  if (body.errors) {
+    if (resp.status == 700) $togglePopup('RegistrationFeePopup');
+    else return $showToast(body.errors[0].message, 'error')
+  }
+  info.value.isRegistered = body.success;
+  if (body.isEmailNeeded) $togglePopup('EnterEmailPopup');
+}
 
 onMounted(async () => {
   let resp = await $API().Events.getBonk({ accessToken: localStorage.getItem('accessToken') });
