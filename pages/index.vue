@@ -46,7 +46,7 @@ let nextTournamentTime = ref(null),
   interval = null,
   info = ref(false)
 
-let { $API, $togglePopup } = useNuxtApp();
+let { $API, $togglePopup, $showToast } = useNuxtApp();
 
 const formatTime = computed(() => {
   if (!nextTournamentTime) return "";
@@ -60,6 +60,10 @@ const formatTime = computed(() => {
 })
 
 const register = async () => {
+  if (!localStorage.getItem('accessToken')){
+    return $togglePopup('SignInPopup')
+  }
+
   if (info?.value?.event?.teams && info?.value?.event?.teams.length > 1) {
     return $togglePopup('ChooseTeamPopup')
   }
