@@ -283,6 +283,10 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
+.page {
+  background-color: #F7931A;
+}
+
 :deep(.header) {
   position: fixed;
 }
@@ -291,10 +295,6 @@ onMounted(async () => {
   width: 100%;
   height: 250px;
   padding: 52px 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("@/assets/imgs/arena-bg.png");
-  background-position: center;
   font-family: "Space Mono";
   text-align: center;
 
@@ -354,13 +354,13 @@ onMounted(async () => {
   display: flex;
   flex-direction: row;
   gap: 10%;
-  background: #27F4BA;
+  background: #FF0000;
   font-family: "Space Mono";
 
   &__block {
     width: max-content;
     white-space: nowrap;
-    color: #181B20;
+    color: #FFFFFF;
     font-size: 14px;
     font-weight: 400;
     line-height: normal;
@@ -393,7 +393,7 @@ onMounted(async () => {
     justify-content: center;
     align-items: center;
     padding: 14px;
-    background: #1FA2F3;
+    background: #FF0000;
     color: #FFF;
     font-feature-settings: 'clig' off, 'liga' off;
     font-size: 14px;
@@ -403,11 +403,13 @@ onMounted(async () => {
     cursor: pointer;
 
     &--registered {
-      background: #27F4BA;
+      background: #FFFFFF1A;
+      color: #FFF;
+      cursor: auto;
     }
 
     &--ended {
-      background: rgba(255, 255, 255, 0.10);
+      background: #FFFFFF1A;
       color: #FFF;
       cursor: auto;
     }
@@ -451,11 +453,11 @@ onMounted(async () => {
       width: 60%;
       z-index: 2;
       border-radius: inherit;
-      background: #1FA2F3;
+      background: #FF0000;
     }
 
     border-radius: 100px;
-    background: #385682;
+    background: #BD0000;
     z-index: 1;
   }
 }
@@ -569,7 +571,7 @@ onMounted(async () => {
       grid-template-columns: inherit;
       padding: 8px 16px;
       gap: 20px;
-      background: #1FA2F3;
+      background: #FF0000;
 
       color: #FFF;
       font-variant-numeric: lining-nums tabular-nums;

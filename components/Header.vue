@@ -4,8 +4,7 @@
       class="logo"
       to="/"
     >
-      <div class="logo__heading">xChess</div>
-      <div class="logo__underheading">By players, for players.</div>
+      <bonkLogo />
     </NuxtLink>
 
     <div class="header__mobile">
@@ -32,14 +31,10 @@
           Menu
         </div>
         <template v-else>
-          <div
-            class="menu__name menu__name--mobile"
-          >
+          <div class="menu__name menu__name--mobile">
             Menu
           </div>
-          <div
-            class="profile profile--desktop"
-          >
+          <div class="profile profile--desktop">
             <img
               class="profile__avatar"
               :src="user.avatar"
@@ -81,35 +76,12 @@
             <NuxtLink
               v-if="user"
               class="menu__item"
-              to="/"
-            >Lobby</NuxtLink>
-            <NuxtLink
-              v-if="user"
-              class="menu__item"
               to="/profile"
             >Profile</NuxtLink>
             <NuxtLink
               class="menu__item"
               to="https://docs.xchess.io"
             >Wiki</NuxtLink>
-            <NuxtLink
-              v-if="!user"
-              class="menu__item"
-              to="https://docs.xchess.io/privacy-policy"
-            >Privacy Policy</NuxtLink>
-            <NuxtLink
-              v-if="!user"
-              class="menu__item"
-              to="https://docs.xchess.io/terms-of-service"
-            >Terms of Service</NuxtLink>
-            <div
-              v-if="user"
-              class="menu__item menu__item--action"
-              @click="$togglePopup('GameSettingsPopup')"
-            >
-              <div>Create game</div>
-              <IconArrow style="height: calc(8px * 1.25);"></IconArrow>
-            </div>
 
             <div
               class="menu__item menu__item--action"
@@ -144,6 +116,7 @@
 </template>
 
 <script setup>
+import bonkLogo from "@/assets/imgs/bonkLogo.svg"
 import IconArrow from "@/assets/imgs/Arrow.svg"
 import IconCross from "@/assets/imgs/+.svg"
 import { useUserStore } from "~/stores/user";
@@ -198,7 +171,7 @@ const openGameSearchPopup = async () => {
 }
 
 const toggleMenu = (blockOnMobile = false) => {
-  if(blockOnMobile && window.innerWidth <= 1440 && isToggled.value) return;
+  if (blockOnMobile && window.innerWidth <= 1440 && isToggled.value) return;
   isToggled.value = !isToggled.value;
   isClosed.value = !isClosed.value;
   document.body.classList.toggle('no-overflow')
@@ -220,7 +193,10 @@ onMounted(async () => {
 })
 </script>
 
-<style lang="scss" scoped>
+<style
+  lang="scss"
+  scoped
+>
 @keyframes fadeOut {
   from {
     transform: scale(0);
@@ -326,23 +302,23 @@ onMounted(async () => {
   flex-direction: column;
   width: 213px;
   padding: 16px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
   backdrop-filter: blur(50px);
   border-radius: 20px;
   transition: .5s;
 
   font-family: 'Neue Plak';
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #FFFFFF0D;
   cursor: pointer;
 
   &--logged {
     align-self: flex-start;
-    background: radial-gradient(136px 60.5px at 24px 195px, #{$color1}1a 0%, #{$color1}00 100%),
-    rgba(255, 255, 255, 0.05);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
+      radial-gradient(62.91% 15.39% at 14.32% 87.88%, rgba(39, 244, 186, 0.105) 0%, rgba(39, 244, 186, 0) 100%);
   }
 
   &__list {
@@ -352,7 +328,7 @@ onMounted(async () => {
       overflow: hidden;
 
       &--logged {
-        height: 190px;
+        height: 116px;
 
         .menu__item--signin {
           height: 0;
@@ -380,7 +356,7 @@ onMounted(async () => {
   &__name {
     transition: .5s;
     margin: 12px 6px 28px 6px;
-    color: #ffffff4d;
+    color: #FFFFFF;
 
     &--mobile {
       display: none;
@@ -388,6 +364,7 @@ onMounted(async () => {
 
     &--desktop {
       &-closed {
+        color: #ffffff4d;
         margin: 12px 6px;
       }
     }
@@ -398,6 +375,7 @@ onMounted(async () => {
   }
 
   &__item {
+    color: #FFFFFF;
     cursor: pointer;
 
     &--action {

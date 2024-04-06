@@ -482,6 +482,14 @@ class Events {
     this.path = `${path}/payments/api/v1`;
   }
 
+  async getBonk({ accessToken }) {
+    return await fetch(`${this.localPath}/bonk`, {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    });
+  }
+
   async getArena({ accessToken }) {
     return await fetch(`${this.localPath}/arena`, {
       headers: {
