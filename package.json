@@ -1,5 +1,5 @@
 {
-  "name": "BONK CHESS",
+  "name": "bonk-chess",
   "private": true,
   "scripts": {
     "build": "nuxt build",

@@ -224,23 +224,23 @@ import { useUserStore } from "~/stores/user"
 import { WalletModalProvider, useWallet } from "solana-wallets-vue";
 
 useHead({
-  title: 'Profile - xChess',
+  title: 'Profile - BonkChess',
   meta: [
     {
       property: 'og:title',
-      content: 'Profile - xChess'
+      content: 'Profile - BonkChess'
     }, {
       property: 'twitter:title',
-      content: 'Profile - xChess'
+      content: 'Profile - BonkChess'
     }, {
       property: 'description',
-      content: 'xChess - web3-powered community-driven chess platform on Solana blockchain'
+      content: 'BonkChess - web3-powered community-driven chess platform on Solana blockchain'
     }, {
       property: 'og:description',
-      content: 'xChess - web3-powered community-driven chess platform on Solana blockchain'
+      content: 'BonkChess - web3-powered community-driven chess platform on Solana blockchain'
     }, {
       property: 'og:url',
-      content: 'https://xchess.io' + useRequestURL().pathname
+      content: 'https://bonkchess.com' + useRequestURL().pathname
     }
   ]
 })

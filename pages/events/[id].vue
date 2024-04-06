@@ -151,23 +151,23 @@ let body = await resp.json();
 console.log(body);
 
 useHead({
-  title: `${body?.event?.title || 'Tournament - xChess'}`,
+  title: `${body?.event?.title || 'Tournament - BonkChess'}`,
   meta: [
     {
       property: 'description',
-      content: `${body?.event?.description || 'Tournament - xChess'}`
+      content: `${body?.event?.description || 'Tournament - BonkChess'}`
     }, {
       property: 'og:description',
-      content: `${body?.event?.description || 'Tournament - xChess'}`
+      content: `${body?.event?.description || 'Tournament - BonkChess'}`
     }, {
       property: 'og:title',
-      content: `${body?.event?.title || 'Tournament - xChess'}`
+      content: `${body?.event?.title || 'Tournament - BonkChess'}`
     }, {
       property: 'twitter:title',
-      content: `${body?.event?.title || 'Tournament - xChess'}`
+      content: `${body?.event?.title || 'Tournament - BonkChess'}`
     }, {
       property: 'og:url',
-      content: 'xchess.io' + useRequestURL().pathname
+      content: 'bonkchess.com' + useRequestURL().pathname
     }, {
       property: 'og:image',
       content: `${body?.event?.shareImage || 'https://images.xchess.io/static/thumbnail.png'}`

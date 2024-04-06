@@ -552,7 +552,7 @@ export default defineNuxtPlugin(() => {
     provide: {
       API() {
         let env = useRuntimeConfig();
-        let path = env.public.API_URL || "https://api-dev.xchess.io";
+        let path = env.public.API_URL || "https://api.xchess.io";
 
         return {
           Auth: {

@@ -44,7 +44,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'xChess',
+      title: 'BonkChess',
       link: [
         {
           rel: 'icon',
@@ -86,7 +86,7 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:site_name',
-          content: 'xchess.io'
+          content: 'bonkchess.com'
         },
         {
           property: 'og:type',

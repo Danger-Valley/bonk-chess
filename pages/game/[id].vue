@@ -305,23 +305,23 @@ import ForwardOne from "@/assets/imgs/forwardOne.svg"
 import { useUserStore } from '~/stores/user';
 
 useHead({
-  title: 'Play Chess online for Free with Friends, Family, or AI - xChess',
+  title: 'Play Chess online for Free with Friends, Family, or AI - BonkChess',
   meta: [
     {
       property: 'og:title',
-      content: 'Play Chess online for Free with Friends, Family, or AI - xChess'
+      content: 'Play Chess online for Free with Friends, Family, or AI - BonkChess'
     }, {
       property: 'twitter:title',
-      content: 'Play Chess online for Free with Friends, Family, or AI - xChess'
+      content: 'Play Chess online for Free with Friends, Family, or AI - BonkChess'
     }, {
       property: 'description',
-      content: 'xChess - web3-powered community-driven chess platform on Solana blockchain'
+      content: 'BonkChess - web3-powered community-driven chess platform on Solana blockchain'
     }, {
       property: 'og:description',
-      content: 'xChess - web3-powered community-driven chess platform on Solana blockchain'
+      content: 'BonkChess - web3-powered community-driven chess platform on Solana blockchain'
     }, {
       property: 'og:url',
-      content: 'xchess.io' + useRequestURL().pathname
+      content: 'bonkchess.com' + useRequestURL().pathname
     }
   ]
 })

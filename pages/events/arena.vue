@@ -109,23 +109,23 @@ import GameModeCoins from "@/assets/imgs/game-mode-coins.svg"
 import gameModes from "@/assets/content/gameModes.json"
 
 useHead({
-  title: 'Arena - xChess',
+  title: 'Arena - BonkChess',
   meta: [
     {
       property: 'og:title',
-      content: 'Arena - xChess'
+      content: 'Arena - BonkChess'
     }, {
       property: 'twitter:title',
-      content: 'Arena - xChess'
+      content: 'Arena - BonkChess'
     }, {
       property: 'description',
-      content: 'Play Arena - competitive Web3 Chess on Solana blockchain - xChess'
+      content: 'Play Arena - competitive Web3 Chess on Solana blockchain - BonkChess'
     }, {
       property: 'og:description',
-      content: 'Play Arena - competitive Web3 Chess on Solana blockchain - xChess'
+      content: 'Play Arena - competitive Web3 Chess on Solana blockchain - BonkChess'
     }, {
       property: 'og:url',
-      content: 'xchess.io' + useRequestURL().pathname
+      content: 'bonkchess.com' + useRequestURL().pathname
     }
   ]
 })
