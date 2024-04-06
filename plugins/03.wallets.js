@@ -3,7 +3,6 @@ import SolanaWallets, { useWallet } from "solana-wallets-vue";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   PhantomWalletAdapter,
-  SlopeWalletAdapter,
   SolflareWalletAdapter,
   BraveWalletAdapter,
   WalletConnectWalletAdapter
@@ -14,7 +13,6 @@ import { useUserStore } from "~/stores/user";
 const walletOptions = {
   wallets: [
     new PhantomWalletAdapter(),
-    new SlopeWalletAdapter(),
     new SolflareWalletAdapter({ network: WalletAdapterNetwork.Devnet }),
     new BraveWalletAdapter(),
     //new WalletConnectWalletAdapter()
