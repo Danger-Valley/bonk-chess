@@ -4,8 +4,6 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   PhantomWalletAdapter,
   SolflareWalletAdapter,
-  BraveWalletAdapter,
-  WalletConnectWalletAdapter
 } from "@solana/wallet-adapter-wallets";
 import base58 from "bs58";
 import { useUserStore } from "~/stores/user";
@@ -13,8 +11,7 @@ import { useUserStore } from "~/stores/user";
 const walletOptions = {
   wallets: [
     new PhantomWalletAdapter(),
-    new SolflareWalletAdapter({ network: WalletAdapterNetwork.Devnet }),
-    new BraveWalletAdapter(),
+    new SolflareWalletAdapter({ network: WalletAdapterNetwork.Mainnet }),
     //new WalletConnectWalletAdapter()
   ],
   autoConnect: false,
