@@ -1,5 +1,7 @@
 <template>
   <ClientOnly>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+
     <div
       class="popup__wrapper"
       id="RegistrationFeePopup"
@@ -48,7 +50,7 @@
 
 <script setup>
 import { WalletModalProvider, useWallet } from "solana-wallets-vue";
-import { Transaction } from "@solana/web3.js"
+// import * as web3 from "@solana/web3.js"
 
 let { $API, $togglePopup, $showToast } = useNuxtApp();
 
@@ -95,6 +97,7 @@ const payFunc = async () => {
   let sign;
   try {
     sign = await signTransaction.value(Transaction.from(JSON.parse(body.transaction).data));
+
   } catch (e) {
     success.value = false;
     return waiting.value = false;
