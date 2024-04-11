@@ -3,11 +3,14 @@ import svgLoader from "vite-svg-loader";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
+  build: {
+    transpile: ['@solana/web3.js', 'rpc-websockets'],
+  },
   modules: [
     '@pinia/nuxt',
     'nuxt-vue3-google-signin',
     '@nuxtjs/robots',
-    'nuxt-simple-sitemap'
+    '@nuxtjs/sitemap'
   ],
   sitemap: {
     exclude: [
@@ -26,7 +29,7 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      include: ["@project-serum/anchor", "@solana/web3.js", "buffer"],
+      include: ["@solana/web3.js", "buffer"],
       esbuildOptions: {
         target: "esnext",
       },
