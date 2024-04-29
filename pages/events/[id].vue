@@ -583,6 +583,28 @@ onMounted(async () => {
   }
 }
 
+@media screen and (max-width: 1360px) {
+  .top {
+    margin: 122px 0 0 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .top {
+    margin: 122px 0 0 0;
+    text-align: center;
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__time {
+      font-size: 62px;
+    }
+  }
+}
+
 @media screen and (max-width: #{map-get($sizes, "tablet") + px}) {
   .top {
     padding: 52px 20px;

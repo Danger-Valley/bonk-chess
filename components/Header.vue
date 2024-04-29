@@ -444,6 +444,14 @@ onMounted(async () => {
   }
 }
 
+@media screen and (max-width: 430px) {
+  .header {
+    a {
+      width: 225px;
+    }
+  }
+}
+
 @media screen and (min-width: #{map-get($sizes, "desktop-high") + px}) {
   .logo {
     &__heading {

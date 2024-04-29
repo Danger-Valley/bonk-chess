@@ -28,9 +28,7 @@
       </div>
     </main>
 
-    <PopupsChooseTeam
-      :teams="info?.event?.teams"
-    />
+    <PopupsChooseTeam :teams="info?.event?.teams" />
 
     <PopupsEventEmail />
     <PopupsEventFee
@@ -60,7 +58,7 @@ const formatTime = computed(() => {
 })
 
 const register = async () => {
-  if (!localStorage.getItem('accessToken')){
+  if (!localStorage.getItem('accessToken')) {
     return $togglePopup('SignInPopup')
   }
 
@@ -96,10 +94,7 @@ onMounted(async () => {
 })
 </script>
 
-<style
-  lang="scss"
-  scoped
->
+<style lang="scss" scoped>
 .page {
   background-color: #F7931A;
 }
@@ -143,6 +138,32 @@ onMounted(async () => {
     padding: 20px 40px;
     background-color: #fff;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .main {
+    height: unset;
+    margin: 222px 0 100px;
+    text-align: center;
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__time {
+      font-size: 62px;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .main {
+    margin: 132px 0 100px;
+
+    &__time {
+      font-size: 42px;
+    }
   }
 }
 </style>
